@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Para Minha Estrela</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #0f0524, #1a0938);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Efeito das estrelas */
+        #stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        /* Estilo da carta */
+        #letter-container {
+            background: rgba(15, 5, 36, 0.85);
+            padding: 40px;
+            max-width: 650px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(159, 107, 255, 0.3);
+            position: relative;
+            z-index: 1;
+            margin-top: 50px;
+            border: 1px solid #5d3fd3;
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Foto de vocês */
+        #couple-photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            object-fit: cover;
+            margin: 25px auto;
+            display: block;
+            border: 2px solid #f7b3ff;
+            box-shadow: 0 0 25px rgba(247, 179, 255, 0.4);
+            transition: transform 0.5s;
+        }
+        
+        #couple-photo:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Texto da mensagem */
+        .message {
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        /* Player de música */
+        #music-player {
+            margin: 30px auto;
+            text-align: center;
+            background: rgba(93, 63, 211, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        /* Botões e títulos */
+        h1 {
+            text-align: center;
+            color: #f7b3ff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(247, 179, 255, 0.5);
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        
+        /* Animação de abertura */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        /* Efeito de estrela cadente */
+        .shooting-star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px 1px white;
+            animation: shoot 2s linear;
+            opacity: 0;
+        }
+        
+        @keyframes shoot {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(500px) translateY(200px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #letter-container {
+                padding: 25px;
+                margin-top: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .message {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="stars-container"></div>
+    
+    <div id="letter-container" class="fade-in">
+        <h1>Para Minha Estrela ✨</h1>
+        
+        <img id="couple-photo" src="rayssa.jpg" alt="Nossa Foto">
+        
+        <div id="message-text">
+            <p class="message">Meu amor,</p>
+            
+            <p class="message">Hoje, ao abrir os olhos para mais um dia, lembrei-me de como cada instante ao seu lado transforma tudo em algo mágico. Seu sorriso ilumina meus pensamentos e sua presença me enche de alegria, fazendo-me sentir a pessoa mais sortuda do mundo.</p>
+            
+            <p class="message">Você é linda por dentro e por fora, e cada traço seu, cada olhar, revela a luz que emana de você. Quero que saiba que, a cada batida do meu coração, há um espaço inteiro dedicado ao seu amor, ao seu encanto e à felicidade que você traz.</p>
+            
+            <p class="message">Que você se sinta abraçada e amada, tão intensamente quanto eu te admiro. Você merece todos os momentos de alegria e um lembrete diário do quão profundamente é amada.</p>
+        </div>
+        
+        <div id="music-player">
+            <h3>Nossa Música Especial</h3>
+            <iframe style="border-radius:12px; margin-top:15px;" 
+                    src="https://open.spotify.com/embed/track/2GiJYvgVaD2HtM8GqD9EgQ?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="152" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+        </div>
+        
+        <p class="signature">Com todo meu amor</p>
+    </div>
+    
+    <script>
+        // Cria as estrelas do background
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            const starCount = 300;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Tamanho e posição aleatórios
+                const size = Math.random() * 3;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Animação única para cada estrela
+                star.style.animationDuration = `${2 + Math.random() * 4}s`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(star);
+            }
+        }
+        
+        // Cria estrelas cadentes ocasionais
+        function createShootingStar() {
+            const container = document.getElementById('stars-container');
+            const shooter = document.createElement('div');
+            shooter.className = 'shooting-star';
+            
+            shooter.style.left = `${Math.random() * 20}%`;
+            shooter.style.top = `${Math.random() * 20}%`;
+            
+            container.appendChild(shooter);
+            
+            // Remove após a animação
+            setTimeout(() => {
+                shooter.remove();
+            }, 2000);
+        }
+        
+        // Inicializa tudo quando a página carrega
+        window.onload = function() {
+            createStars();
+            
+            // Estrelas cadentes a cada 3-8 segundos
+            setInterval(createShootingStar, 3000 + Math.random() * 5000);
+            
+            // Substitui [Seu Nome] pelo nome real (opcional)
+            const yourName = document.getElementById('your-name');
+            yourName.textContent = 'Seu Nome'; // Substitua pelo seu nome
+        };
+    </script>
+</body>
+</html>
